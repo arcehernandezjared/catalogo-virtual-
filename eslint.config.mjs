@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Plain Node CLI scripts (CommonJS, run outside the app bundle)
+    "prisma/seed.js",
+    "scripts/hash-password.js",
   ]),
 ]);
 

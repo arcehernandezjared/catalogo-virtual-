@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  name          String
+  description   String?
+  price         Float
+  originalPrice Float?
+  category      String
+  imageUrl      String?
+  featured      Boolean  @default(false)
+  visible       Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([category])
+}
+
+model Settings {
+  id           Int     @id @default(1)
+  storeName    String  @default("Mi Catálogo")
+  tagline      String  @default("Los mejores productos, a un mensaje de distancia")
+  whatsapp     String  @default("")
+  logoUrl      String?
+  heroImageUrl String?
+  primaryColor String  @default("#6366f1")
+}
