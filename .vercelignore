@@ -1,0 +1,14 @@
+# Secrets and local-only files that must never be part of the deployment
+# bundle. Vercel already injects real values via its own env var system.
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# local-only database and export artifacts
+/dev.db
+/dev.db-journal
+/prisma/data-export.json
+
+# Neon CLI link metadata
+.neon
