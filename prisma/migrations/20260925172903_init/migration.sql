@@ -1,25 +1,34 @@
+-- CreateSchema
+CREATE SCHEMA IF NOT EXISTS "public";
+
 -- CreateTable
 CREATE TABLE "Product" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT,
-    "price" REAL NOT NULL,
+    "price" DOUBLE PRECISION NOT NULL,
+    "originalPrice" DOUBLE PRECISION,
     "category" TEXT NOT NULL,
     "imageUrl" TEXT,
     "featured" BOOLEAN NOT NULL DEFAULT false,
     "visible" BOOLEAN NOT NULL DEFAULT true,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Settings" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT DEFAULT 1,
+    "id" INTEGER NOT NULL DEFAULT 1,
     "storeName" TEXT NOT NULL DEFAULT 'Mi Catálogo',
     "tagline" TEXT NOT NULL DEFAULT 'Los mejores productos, a un mensaje de distancia',
     "whatsapp" TEXT NOT NULL DEFAULT '',
     "logoUrl" TEXT,
-    "primaryColor" TEXT NOT NULL DEFAULT '#6366f1'
+    "heroImageUrl" TEXT,
+    "primaryColor" TEXT NOT NULL DEFAULT '#6366f1',
+
+    CONSTRAINT "Settings_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

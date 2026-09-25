@@ -45,3 +45,7 @@ next-env.d.ts
 /dev.db
 /dev.db-journal
 
+# one-off export of your previous local data, used to seed the production
+# database once — contains real store data, not meant to be published
+/prisma/data-export.json
+

@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
     // Plain Node CLI scripts (CommonJS, run outside the app bundle)
     "prisma/seed.js",
     "scripts/hash-password.js",
+    "scripts/import-data.js",
   ]),
 ]);
 
