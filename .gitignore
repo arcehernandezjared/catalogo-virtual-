@@ -49,3 +49,4 @@ next-env.d.ts
 # database once — contains real store data, not meant to be published
 /prisma/data-export.json
 
+.neon
